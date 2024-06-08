@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+dotenv.config();
 
-mongoose.connect(
-  "mongodb+srv://hydra:harsh2468@cluster0.bosqbn6.mongodb.net/paytm"
-);
+const MONGODB_URI = `${process.env.MONGODB_URI}`;
+
+mongoose.connect(MONGODB_URI);
 
 const userSchema = mongoose.Schema({
   username: {
