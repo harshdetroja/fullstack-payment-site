@@ -6,7 +6,7 @@ export const InputBox = ({ title, placeholder, type, onChange }) => {
         type={type}
         placeholder={placeholder}
         className="border-2 rounded-md w-full mt-2 p-2 placeholder:text-zinc-500 placeholder:text-sm"
-        onChange={onChange}
+        onChange={(e) => onChange(e.target.value)}
       />
     </div>
   );
