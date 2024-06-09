@@ -10,11 +10,10 @@ const authMiddleware = async (req, res, next) => {
   const token = authHeader.slice(7, authHeader.length);
 
   try {
-    console.log("middleware");
     const decoded = jwt.verify(token, JWT_SECRET);
 
     req.userId = decoded.userId;
-
+    console.log("middleware");
     next();
   } catch (err) {
     return res.status(403).json({});

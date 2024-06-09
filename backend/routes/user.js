@@ -25,8 +25,6 @@ const updateBody = zod.object({
   lastName: zod.string().optional(),
 });
 
-const filterBody = zod.object({});
-
 router.post("/signup", async (req, res) => {
   const { success } = signUpBody.safeParse(req.body);
 
